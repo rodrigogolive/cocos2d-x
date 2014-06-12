@@ -270,6 +270,18 @@ public class Cocos2dxSound {
 		}
 	}
 
+    public void setEffectVolume(final int steamID, float pVolume) {
+        // pVolume should be in [0, 1.0]
+        if (pVolume < 0) {
+            pVolume = 0;
+        }
+        if (pVolume > 1) {
+            pVolume = 1;
+        }
+
+        this.mSoundPool.setVolume(steamID, pVolume, pVolume);
+    }
+
 	public void end() {
 		this.mSoundPool.release();
 		this.mPathStreamIDsMap.clear();

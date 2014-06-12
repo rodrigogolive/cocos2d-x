@@ -159,6 +159,10 @@ void SimpleAudioEngine::setEffectsVolume(float volume) {
 	return oAudioPlayer->setEffectsVolume(volume);
 }
 
+void SimpleAudioEngine::setEffectVolume(unsigned int nSoundId, float volume) {
+    return oAudioPlayer->setEffectVolume(nSoundId, volume);
+}
+
 
 } // end of namespace CocosDenshion
 

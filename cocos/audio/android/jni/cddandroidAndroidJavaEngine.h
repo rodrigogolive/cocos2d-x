@@ -45,6 +45,7 @@ namespace CocosDenshion {
             void setBackgroundMusicVolume(float volume);
             float getEffectsVolume();
             void setEffectsVolume(float volume);
+            void setEffectVolume(unsigned int nSoundId, float volume);
             unsigned int playEffect(const char* pszFilePath, bool bLoop = false,
                                     float pitch = 1.0f, float pan = 0.0f, float gain = 1.0f);
             void pauseEffect(unsigned int nSoundId);

@@ -167,6 +167,9 @@ public:
     */
     virtual void setEffectsVolume(float volume);
 
+    // This just changes the volume of a specific effect
+    virtual void setEffectVolume(unsigned int nSoundId, float volume);
+
     // 
     // for sound effects
 

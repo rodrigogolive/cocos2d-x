@@ -301,6 +301,20 @@ void FmodAudioPlayer::setEffectsVolume(float volume) {
 
 }
 
+void FmodAudioPlayer::setEffectVolume(unsigned int uSoundId, float volume) {
+    FMOD::Channel* pChannel;
+    pSystem->update();
+
+    map<unsigned int, FMOD::Channel*>::iterator l_it =
+            mapEffectSoundChannel.find(uSoundId);
+    if (l_it == mapEffectSoundChannel.end()) {
+        //no play  yet
+        return;
+    }
+    pChannel = l_it->second;
+    pChannel->setVolume(volume);
+}
+
 unsigned int FmodAudioPlayer::playEffect(const char* pszFilePath, bool bLoop,
                                          float pitch, float pan, float gain) {
 	FMOD::Channel* pChannel;

@@ -234,6 +234,10 @@ public class Cocos2dxHelper {
 		Cocos2dxHelper.sCocos2dSound.setEffectsVolume(volume);
 	}
 
+    public static void setEffectVolume(final int soundId, final float volume) {
+        Cocos2dxHelper.sCocos2dSound.setEffectVolume(soundId, volume);
+    }
+
 	public static void unloadEffect(final String path) {
 		Cocos2dxHelper.sCocos2dSound.unloadEffect(path);
 	}

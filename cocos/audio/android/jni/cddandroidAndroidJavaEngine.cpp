@@ -203,6 +203,17 @@ namespace CocosDenshion {
             methodInfo.env->DeleteLocalRef(methodInfo.classID);
         }
 
+        void AndroidJavaEngine::setEffectVolume(unsigned int nSoundId, float volume) {
+            cocos2d::JniMethodInfo methodInfo;
+
+            if (! getJNIStaticMethodInfo(methodInfo, "setEffectVolume", "(IF)V")) {
+                return ;
+            }
+
+            methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID, (int)nSoundId, volume);
+            methodInfo.env->DeleteLocalRef(methodInfo.classID);
+        }
+
         unsigned int AndroidJavaEngine::playEffect(const char* pszFilePath, bool bLoop,
                                                    float pitch, float pan, float gain) {
             cocos2d::JniMethodInfo methodInfo;

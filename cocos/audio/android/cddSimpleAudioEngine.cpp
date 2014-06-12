@@ -65,6 +65,7 @@ namespace CocosDenshion {
     void SimpleAudioEngine::setBackgroundMusicVolume(float volume) { }
     float SimpleAudioEngine::getEffectsVolume() { return 0.0f; }
     void SimpleAudioEngine::setEffectsVolume(float volume) { }
+    void SimpleAudioEngine::setEffectVolume(unsigned int nSoundId, float volume) { }
     unsigned int SimpleAudioEngine::playEffect(const char* pszFilePath,
                                                bool bLoop,
                                                float pitch,
